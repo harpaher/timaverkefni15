@@ -1,75 +1,56 @@
-# React + TypeScript + Vite
+# React – State, useState og conditional rendering
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Kóði fyrir tímann: upphitun, fylgiæfing, tímaverkefni og bónus.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Möppurnar
 
 ```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+react-state-verkefni/
+├── README.md          ← þú ert hér
+├── LAUSNIR.md         ← hvernig við leysum hvert verkefni, skref fyrir skref (fyrir kennara)
+├── byrjun/            ← BYRJUNARKÓÐI fyrir nemendur, með TODO-um
+│   ├── VERKEFNI.md    ← verkefnalisti / todo með gátreitum
+│   └── src/
+│       ├── App.tsx                 ← sýnir öll verkefnin hvert undir öðru
+│       ├── upphitun/
+│       │   ├── Ljosrofi.tsx        ← 💡 boolean · ? :
+│       │   ├── Teningur.tsx        ← 🎲 number · &&
+│       │   └── Stafateljari.tsx    ← ✍️ string · && · ? :
+│       ├── teymi/
+│       │   ├── Team.tsx            ← frá síðasta tíma, óbreytt
+│       │   └── ProfileCard.tsx     ← fylgiæfingin
+│       ├── kaffihus/
+│       │   ├── Menu.tsx            ← tímaverkefni, skref 5
+│       │   └── MenuItem.tsx        ← tímaverkefni, skref 1–4
+│       └── bonus/
+│           └── GiskaLeikur.tsx     ← 🎯 bónus
+└── lausnir/           ← sama verkefni, fullklárað
 ```
+
+Báðar möppurnar eru sjálfstæð Vite + React + TypeScript verkefni.
+
+## Keyra
+
+```bash
+cd byrjun        # eða: cd lausnir
+npm install
+npm run dev
+```
+
+Opnið slóðina sem birtist (venjulega http://localhost:5173).
+
+## Tenging við glærurnar
+
+| Glæra | Verkefni | Skrá |
+|---|---|---|
+| 01 · Upphitun | Ljósrofi, Teningur, Stafateljari | `src/upphitun/` |
+| 02 · Fylgiæfing | Teymissíðan lifnar við | `src/teymi/ProfileCard.tsx` |
+| 03 · Tímaverkefni | Kaffihúsið tekur við pöntunum | `src/kaffihus/` |
+| Bónus | Giskaðu á töluna | `src/bonus/GiskaLeikur.tsx` |
+
+## Ábendingar fyrir kennara
+
+- Látið nemendur fá **bara `byrjun/`**. `lausnir/` og `LAUSNIR.md` eru fyrir ykkur.
+- Ef nemendur eiga sitt eigið teymis- og kaffihúsverkefni frá síðasta tíma geta þau unnið í því í staðinn
+  og notað TODO-in í `byrjun/` sem leiðbeiningar.
+- Tvennt nýtt sem gæti þurft að útskýra: `style={{ ... }}` (upphitun) og `filter()` (kaffihús, skref 5).

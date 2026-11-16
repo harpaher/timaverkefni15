@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #f7f6f3;
+  color: #14213d;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+section {
+  margin-top: 48px;
+}
+
+section > h2 {
+  color: #1a7a90;
+  border-bottom: 2px solid #e3e1dc;
+  padding-bottom: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e3e1dc;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card h3,
+.card p {
+  margin: 0;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.muted {
+  color: #5b6475;
+}
+
+button {
+  font: inherit;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #1a7a90;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #146577;
+}
+
+button:disabled {
+  background: #c9cdd4;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: #e9e6df;
+  color: #14213d;
+}
+
+input,
+textarea {
+  font: inherit;
+  padding: 8px 12px;
+  border: 1px solid #c9cdd4;
+  border-radius: 10px;
+  width: 100%;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 2px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.badge.vegan {
+  background: #dcf2e3;
+  color: #1d6b3a;
+}
+
+.badge.uppselt {
+  background: #fbe3d0;
+  color: #8a3d0b;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.qty {
+  min-width: 2ch;
+  text-align: center;
+  font-weight: 700;
+}
+
+.karfa {
+  color: #1a7a90;
+  font-weight: 700;
+}
+
+/* Upphitun */
+.ljosrofi {
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e3e1dc;
+  transition: background 0.3s, color 0.3s;
+}
+
+.pera {
+  font-size: 4rem;
+  margin: 0;
+  transition: opacity 0.3s;
+}
+
+.teningur-andlit {
+  font-size: 5rem;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+}
+
+.sexa {
+  color: #e8843a;
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.vidvorun {
+  color: #c0392b;
+  font-weight: 600;
+}
+
+/* Bónus */
+.leikur {
+  max-width: 420px;
+}
