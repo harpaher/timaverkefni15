@@ -19,7 +19,7 @@ function MenuItem({ name, price, isVegan = false, soldOut = false }: MenuItemPro
     <div className="card">
       <div className="card-top">
         <h3>{name}</h3>
-        <p>{price} kr.</p>
+        <p>{price.toLocaleString("is-IS").replace(",", ".")} kr.</p>
       </div>
       {/* Dæmi um && sem er þegar til: merkið birtist bara á vegan réttum. */}
       {isVegan && <span className="badge vegan">🌱 Vegan</span>}
@@ -45,6 +45,11 @@ function MenuItem({ name, price, isVegan = false, soldOut = false }: MenuItemPro
           TODO: Sýnið <p className="karfa">{qty} í körfu · {qty * price} kr.</p>
                 BARA ef qty er stærra en 0 (notið &&).
                 Ath: skrifið qty > 0 &&  –  ekki bara  qty &&  (annars birtist 0 á skjánum!) */}
+      {qty > 0 && (
+        <p className="karfa">
+          {qty} í körfu · {(qty * price).toLocaleString("is-IS").replace(",", ".")} kr.
+        </p>
+      )}
       {/* AUKA: Fallegri verð: {price.toLocaleString("is-IS")} sýnir 1.290 í stað 1290 */}
     </div>
   );
