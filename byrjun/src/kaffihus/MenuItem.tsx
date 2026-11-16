@@ -27,6 +27,7 @@ function MenuItem({ name, price, isVegan = false, soldOut = false }: MenuItemPro
           TODO: Ef soldOut er true á að sýna <span className="badge uppselt">Uppselt</span>
                 Í STAÐ takkanna hér fyrir neðan. Notið ternary:
                 {soldOut ? ( ...uppselt... ) : ( ...takkarnir... )} */}
+
       {/* SKREF 1: –takkinn lækkar qty um 1, +takkinn hækkar um 1. SKREF 2: –takkinn á að vera óvirkur þegar qty er 0: disabled={qty === 0}{" "}
        */}
       {soldOut ? (
