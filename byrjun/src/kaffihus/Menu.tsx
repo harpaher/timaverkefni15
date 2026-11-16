@@ -17,29 +17,25 @@ function Menu() {
   // SKREF 5 – „🌱 Bara vegan“
   // TODO: Búðu til boolean state, t.d. [veganOnly, setVeganOnly], sem byrjar sem false.
 
+  const [veganOnly, setVeganOnly] = useState(false);
+
   // TODO: Búðu til lista sem inniheldur bara vegan rétti þegar veganOnly er true,
   //       en ALLA rétti annars.
   //       Vísbending: menu.filter((item) => !veganOnly || item.isVegan)
   //       filter() skilar NÝJU fylki með þeim stökum þar sem fallið skilar true.
-  const synilegt = menu;
+  const synilegt = menu.filter((item) => !veganOnly || item.isVegan);
 
   return (
     <div>
       {/* TODO: Takkinn snýr veganOnly við.
                 Texti: „Sýna allt“ ef veganOnly, annars „🌱 Bara vegan“. */}
       <p>
-        <button>🌱 Bara vegan</button>
+        <button onClick={() => setVeganOnly(!veganOnly)}>{veganOnly ? "Sýna allt" : "🌱 Bara vegan"}</button>
       </p>
 
       <div className="grid">
         {synilegt.map((item) => (
-          <MenuItem
-            key={item.id}
-            name={item.name}
-            price={item.price}
-            isVegan={item.isVegan}
-            soldOut={item.soldOut}
-          />
+          <MenuItem key={item.id} name={item.name} price={item.price} isVegan={item.isVegan} soldOut={item.soldOut} />
         ))}
       </div>
     </div>
